@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Weerwolven van wakkerdam</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+		<link rel="stylesheet" href="styles/main.css">
+
+		<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  		crossorigin="anonymous"></script>
+
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+		<script src="javascript/main.js" type="text/javascript"></script>
+	</head>
+
+	<body>
+		<div class="header">
+			<h1>Weerwolven van Wakkerdam</h1>
+		</div>
+		<div id="allCards" class="container" style="display: none;">
+			<div class="weerwolven clearfix row">
+				<h2>De Weerwolven</h2>
+				<div class="card col-md-3 col-sm-6 col-xs-6">
+					<a href="#weerwolf" onclick="showCard('weerwolf');">
+						<img src="images/cards_weerwolf.jpg">
+					</a>
+					<h3>Gewone Weerwolf</h3>	
+				</div>
+				<div class="card col-md-3 col-sm-6 col-xs-6">
+					<a href="#grote_boze_wolf" onclick="showCard('grote_boze_wolf')";>
+						<img src="images/cards_grote boze wolf.jpg">	
+					</a>
+					<h3>De Grote Boze Wolf</h3>		
+				</div>
+				<div class="card col-md-3 col-sm-6 col-xs-6">
+					<a href="#besmettelijke_oerwolf" onclick="showCard('besmettelijke_oerwolf');">
+						<img src="images/cards_besmettelijke oerwolf.jpg">
+					</a>
+					<h3>De Besmettelijke Oerwolf</h3>
+				</div>
+			</div>
+
+			<div class="dubieuzen clearfix row">
+				<h2>De Dubieuzen</h2>
+				<div class="card col-md-3 col-sm-6 col-xs-6">
+					<a href="#dief" onclick="showCard('dief');">
+						<img src="images/cards_dief.jpg">
+					</a>
+					<h3>De Dief</h3>
+				</div>
+				<div class="card col-md-3 col-sm-6 col-xs-6">
+					<a href="#dienstmeisje" onclick="showCard('dienstmeisje');">
+						<img src="images/cards_toegewijde dienstmeisje.jpg">	
+					</a>
+					<h3>Het Toegewijde Dienstmeisje</h3>	
+				</div>
+				<div class="card col-md-3 col-sm-6 col-xs-6">
+					<a href="#toneelspeler" onclick="showCard('toneelspeler');">
+						<img src="images/cards_toneelspeler.jpg">
+					</a>
+					<h3>De Toneelspeler</h3>
+				</div>
+				<div class="card col-md-3 col-sm-6 col-xs-6">
+					<a href="#kleine_wilde" onclick="showCard('kleine_wilde');">
+						<img src="images/cards_kleine wilde.jpg">
+					</a>
+					<h3>De Kleine Wilde</h3>
+				</div>				
+  				<div class="clearfix hidden-md-up"></div>
+				<div class="card col-md-3 col-sm-6 col-xs-6">
+					<a href="#wolfshond" onclick="showCard('wolfshond');">
+						<img src="images/cards_wolfshond.jpg">
+					</a>
+					<h3>De Wolfshond</h3>
+				</div>
+			</div>
+
+			<div class="eenlingen clearfix row">
+				<h2>De Eenlingen</h2>
+				<div class="card col-md-3 col-sm-6 col-xs-6">
+					<a href="#witte_weerwolf" onclick="showCard('witte_weerwolf');">
+						<img src="images/cards_witte weerwolf.jpg">
+					</a>
+					<h3>De Witte Weerwolf</h3>
+				</div>
+				<div class="card col-md-3 col-sm-6 col-xs-6">
+					<a href="#engel" onclick="showCard('engel');">
+						<img src="images/cards_engel.jpg">	
+					</a>
+					<h3>De Engel</h3>		
+				</div>
+				<div class="card col-md-3 col-sm-6 col-xs-6">
+					<a href="#fluitspeler" onclick="showCard('fluitspeler');">
+						<img src="images/cards_fluitspeler.jpg">
+					</a>
+					<h3>De Fluitspeler</h3>
+				</div>
+				<div class="card col-md-3 col-sm-6 col-xs-6">
+					<a href="#sektarier" onclick="showCard('sektarier');">
+						<img src="images/cards_verschrikkelijke sektarier.jpg">
+					</a>
+					<h3>De Verschrikkelijke Sektariër</h3>
+				</div>
+			</div>
+
+			<div id="burgers" class="burgers clearfix row">
+				<h2>De burgers</h2>
+				<div class="card col-md-3 col-sm-6 col-xs-6">
+					<a href="#burger" onclick="showCard('burger');">
+						<img src="images/cards_gewone burger.jpg">
+					</a>
+					<h3>Gewone burger</h3>
+				</div>
+				<div class="card col-md-3 col-sm-6 col-xs-6">
+					<a href="#zieneres" onclick="showCard('zieneres');">
+						<img src="images/cards_zieneres.jpg">	
+					</a>
+					<h3>De Zieneres</h3>			
+				</div>
+				<div class="card col-md-3 col-sm-6 col-xs-6">
+					<a href="#cupido" onclick="showCard('cupido');">
+						<img src="images/cards_cupido.jpg">
+					</a>
+					<h3>Cupido</h3>
+				</div>
+				<div class="card col-md-3 col-sm-6 col-xs-6">
+					<a href="#heks" onclick="showCard('heks');">
+						<img src="images/cards_heks.jpg">
+					</a>
+					<h3>De Heks</h3>
+				</div>
+  				<div class="clearfix hidden-md-up"></div>
+				<div class="card col-md-3 col-sm-6 col-xs-6">
+					<a href="#jager" onclick="showCard('jager');">
+						<img src="images/cards_jager.jpg">
+					</a>
+					<h3>De Jager</h3>
+				</div>
+				<div class="card col-md-3 col-sm-6 col-xs-6">
+					<a href="#onschuldig_meisje" onclick="showCard('onschuldig_meisje');">
+						<img src="images/cards_onschuldige meisje.jpg">
+					</a>
+					<h3>Het onschuldige meisje</h3>
+				</div>
+				<div class="card col-md-3 col-sm-6 col-xs-6">
+					<a href="#genezer" onclick="showCard('genezer');">
+						<img src="images/cards_genezer.jpg">
+					</a>
+					<h3>De Genezer</h3>
+				</div>
+				<div class="card col-md-3 col-sm-6 col-xs-6">
+					<a href="#dorpsoudste" onclick="showCard('dorpsoudste');">
+						<img src="images/cards_dorpsoudste.jpg">
+					</a>
+					<h3>De Dorpsoudste</h3>
+				</div>
+  				<div class="clearfix hidden-md-up"></div>
+				<div class="card col-md-3 col-sm-6 col-xs-6">
+					<a href="#zondebok" onclick="showCard('zondebok');">
+						<img src="images/cards_zondebok.jpg">
+					</a>
+					<h3>De Zondebok</h3>
+				</div>
+				<div class="card col-md-3 col-sm-6 col-xs-6">
+					<a href="#dorpsgek" onclick="showCard('dorpsgek');">
+						<img src="images/cards_dorpsgek.jpg">
+					</a>
+					<h3>De Dorpsgek</h3>
+				</div>
+				<div class="card col-md-3 col-sm-6 col-xs-6">
+					<a href="#burgemeester" onclick="showCard('burgemeester');">
+						<img src="images/cards_burgemeester.jpg">
+					</a>
+					<h3>De Burgemeester</h3>
+				</div>
+				<div class="card col-md-3 col-sm-6 col-xs-6">
+					<a href="#twee_gezusters" onclick="showCard('twee_gezusters');">
+						<img src="images/cards_twee gezusters.jpg">
+					</a>
+					<h3>De Twee Gezusters</h3>
+				</div>
+				<div class="card col-md-3 col-sm-6 col-xs-6">
+					<a href="#drie_gebroeders" onclick="showCard('drie_gebroeders');">
+						<img src="images/cards_drie gebroeders.jpg">
+					</a>
+					<h3>De Drie Gebroeders</h3>
+				</div>
+				<div class="card col-md-3 col-sm-6 col-xs-6">
+					<a href="#vos" onclick="showCard('vos');">
+						<img src="images/cards_vos.jpg">
+					</a>
+					<h3>De Vos</h3>
+				</div>
+				<div class="card col-md-3 col-sm-6 col-xs-6">
+					<a href="#titus_en_de_beer" onclick="showCard('titus_en_de_beer');">
+						<img src="images/cards_titus en zijn dansende beer.jpg">
+					</a>
+					<h3>Titus en zijn Dansende Beer</h3>
+				</div>
+				<div class="card col-md-3 col-sm-6 col-xs-6">
+					<a href="#raadsheer" onclick="showCard('raadsheer');">
+						<img src="images/cards_stotterende raadsheer.jpg">
+					</a>
+					<h3>De Stotterende Raadsheer</h3>
+				</div>
+  				<div class="clearfix hidden-md-up"></div>
+				<div class="card col-md-3 col-sm-6 col-xs-6">
+					<a href="#ridder_met_zwaard" onclick="showCard('ridder_met_zwaard');">
+						<img src="images/cards_ridder met het roestige zwaard.jpg">
+					</a>
+					<h3>De Ridder met het Roestige Zwaard</h3>
+				</div>
+			</div>
+		</div>
+
+		<div id="detail" class="container">
+			<div id="weerwolf" style="display: none;">
+				<a href="#" onclick="onBack();" ><h2>Back</h1></a>
+				<div class="card col-md-3 col-sm-6 col-xs-8">
+					<a href="#weerwolf">
+						<img src="images/cards_weerwolf.jpg">
+					</a>
+					<h3>Gewone Weerwolf</h3>
+				</div>
+				<div class="card col-md-12 col-sm-12 col-xs-12">
+					<ul class="list-group">
+					  <li class="list-group-item">Elke nacht worden alle weerwolven op teken van de spelleider wakker en wijzen gezamenlijk een slachtoffer aan.</li>
+					  <li class="list-group-item">De weerwolven winnen het spel wanneer alle niet-weerwolven zijn uitgeschakeld</li>
+					</ul>
+				</div>
+				
+			</div>
+			<div id="grote_boze_wolf" style="display: none;">
+				<a href="#" onclick="onBack();" ><h2>Back</h1></a>
+				<div class="card col-md-3 col-sm-6 col-xs-8">
+					<a href="#weerwolf">
+						<img src="images/cards_grote boze wolf.jpg">
+					</a>
+					<h3>De Grote Boze Wolf</h3>
+				</div>
+				<div class="card col-md-12 col-sm-12 col-xs-12">
+					<ul class="list-group">
+					  <li class="list-group-item">De grote boze wolf wordt elke nacht samen met de andere weerwolven wakker wakker en kiest met de rest van de weerwolven een slachtoffer.</li>
+					  <li class="list-group-item">Zolang alle wolven (inclusief de kleine wilde en de wolfshond) nog leven, wordt de grote boze wolf nog een keer wakker en maakt hij nog een slachtoffer.</li>
+					  <li class="list-group-item">De grote boze wolf is een weerwolf en wint samen met de weerwolven</li>
+					</ul>
+				</div>
+			</div>
+			<div id="besmettelijke_oerwolf" style="display: none;">
+				<a href="#" onclick="onBack();" ><h2>Back</h1></a>
+				<div class="card col-md-3 col-sm-6 col-xs-8">
+					<a href="#besmettelijke_oerwolf">
+						<img src="images/cards_besmettelijke oerwolf.jpg">
+					</a>
+					<h3>De Besmettelijke Oerwolf</h3>
+				</div>
+			</div>
+			<div id="dief" style="display: none;">
+				<a href="#" onclick="onBack();" ><h2>Back</h1></a>
+				<div class="card col-md-3 col-sm-6 col-xs-8">
+					<a href="#dief">
+						<img src="images/cards_dief.jpg">
+					</a>
+					<h3>De Dief</h3>
+				</div>
+			</div>
+			<div id="dienstmeisje" style="display: none;">
+				<a href="#" onclick="onBack();" ><h2>Back</h1></a>
+				<div class="card col-md-3 col-sm-6 col-xs-8">
+					<a href="#dienstmeisje">
+						<img src="images/cards_toegewijde dienstmeisje.jpg">
+					</a>
+					<h3>Het Toegewijde Dienstmeisje</h3>
+				</div>
+			</div>
+			<div id="toneelspeler" style="display: none;">
+				<a href="#" onclick="onBack();" ><h2>Back</h1></a>
+				<div class="card col-md-3 col-sm-6 col-xs-8">
+					<a href="#toneelspeler">
+						<img src="images/cards_toneelspeler.jpg">
+					</a>
+					<h3>De Toneelspeler</h3>
+				</div>
+			</div>
+			<div id="kleine_wilde" style="display: none;">
+				<a href="#" onclick="onBack();" ><h2>Back</h1></a>
+				<div class="card col-md-3 col-sm-6 col-xs-8">
+					<a href="#kleine_wilde">
+						<img src="images/cards_kleine wilde.jpg">
+					</a>
+					<h3>De Kleine Wilde</h3>
+				</div>
+			</div>
+			<div id="wolfshond" style="display: none;">
+				<a href="#" onclick="onBack();" ><h2>Back</h1></a>
+				<div class="card col-md-3 col-sm-6 col-xs-8">
+					<a href="#wolfshond">
+						<img src="images/cards_wolfshond.jpg">
+					</a>
+					<h3>De Wolfshond</h3>
+				</div>
+			</div>
+			<div id="witte_weerwolf" style="display: none;">
+				<a href="#" onclick="onBack();" ><h2>Back</h1></a>
+				<div class="card col-md-3 col-sm-6 col-xs-8">
+					<a href="#witte_weerwolf">
+						<img src="images/cards_witte weerwolf.jpg">
+					</a>
+					<h3>De Witte Weerwolf</h3>
+				</div>
+			</div>
+			<div id="engel" style="display: none;">
+				<a href="#" onclick="onBack();" ><h2>Back</h1></a>
+				<div class="card col-md-3 col-sm-6 col-xs-8">
+					<a href="#engel">
+						<img src="images/cards_engel.jpg">
+					</a>
+					<h3>De Engel</h3>
+				</div>
+			</div>
+			<div id="fluitspeler" style="display: none;">
+				<a href="#" onclick="onBack();" ><h2>Back</h1></a>
+				<div class="card col-md-3 col-sm-6 col-xs-8">
+					<a href="#fluitspeler">
+						<img src="images/cards_fluitspeler.jpg">
+					</a>
+					<h3>De Fluitspeler</h3>
+				</div>
+			</div>
+			<div id="sektarier" style="display: none;">
+				<a href="#" onclick="onBack();" ><h2>Back</h1></a>
+				<div class="card col-md-3 col-sm-6 col-xs-8">
+					<a href="#sektarier">
+						<img src="images/cards_verschrikkelijke sektarier.jpg">
+					</a>
+					<h3>De Verschrikkelijke Sektariër</h3>
+				</div>
+			</div>
+			<div id="burger" style="display: none;">
+				<a href="#" onclick="onBack();" ><h2>Back</h1></a>
+				<div class="card col-md-3 col-sm-6 col-xs-8">
+					<a href="#burger">
+						<img src="images/cards_gewone burger.jpg">
+					</a>
+					<h3>Gewone Burger</h3>
+				</div>
+				<div class="card col-md-12 col-sm-12 col-xs-12">
+					<ul class="list-group">
+					  <li class="list-group-item">De gewone burger heeft geen bijzondere gave.</li>
+					  <li class="list-group-item">De burgers winnen het spel wanneer alle niet-burgers zijn uitgeschakeld.</li>
+					</ul>
+				</div>
+			</div>
+			<div id="zieneres" style="display: none;">
+				<a href="#" onclick="onBack();" ><h2>Back</h1></a>
+				<div class="card col-md-3 col-sm-6 col-xs-8">
+					<a href="#zieneres">
+						<img src="images/cards_zieneres.jpg">
+					</a>
+					<h3>De Zieneres</h3>
+				</div>
+				<div class="card col-md-12 col-sm-12 col-xs-12">
+					<ul class="list-group">
+					  <li class="list-group-item">De zieneres wordt elke nacht op teken van de spelleider wakker en wijst iemand aan. De spelleider zal de kaart van de gekozen persoon aan de zieneres laten zien.</li>
+					  <li class="list-group-item">De zieneres is een burger en wint samen met de burgers wanneer alle niet-burgers zijn uitgeschakeld</li>
+					</ul>
+				</div>
+			</div>
+			<div id="cupido" style="display: none;">
+				<a href="#" onclick="onBack();" ><h2>Back</h1></a>
+				<div class="card col-md-3 col-sm-6 col-xs-8">
+					<a href="#cupido">
+						<img src="images/cards_cupido.jpg">
+					</a>
+					<h3>Cupido</h3>
+				</div>
+				<div class="card col-md-12 col-sm-12 col-xs-12">
+					<ul class="list-group">
+					  <li class="list-group-item">Alleen aan het begin van de eerste nacht wordt Cupido wakker.</li>
+					  <li class="list-group-item">Cupido wijst twee spelers aan. Deze twee spelers zijn vanaf dat moment de geliefden en zijn  smoorverliefd op elkaar.</li>
+					  <li class="list-group-item">Nadat Cupido gaat slapen maakt de spelleider de geliefden wakker, zodat de geliefden weten wie de andere geliefde is.</li>
+					  <li class="list-group-item">Wanneer een van de geliefden sterft, sterft de andere geliefde direct aan liefdesverdriet.</li>
+					  <li class="list-group-item">Een geliefde mag nooit tegen zijn geliefde stemmen.</li>
+					  <li class="list-group-item">Wanneer de geliefden niet in hetzelfde team horen (bijvoorbeeld een weerwolf en een burger) winnen de geliefden alleen het spel als ze binnen het kader van de spelregels alle andere speleres weten te elimineren.</li>
+					  <li class="list-group-item">Cupido mag zichzelf aanwijzen om zo een van de geliefden te worden.</li>
+					  <li class="list-group-item">Cupido is een burger en wint samen met de burgers wanneer alle niet-burgers zijn uitgeschakeld</li>
+					</ul>
+				</div>
+			</div>
+			<div id="heks" style="display: none;">
+				<a href="#" onclick="onBack();" ><h2>Back</h1></a>
+				<div class="card col-md-3 col-sm-6 col-xs-8">
+					<a href="#heks">
+						<img src="images/cards_heks.jpg">
+					</a>
+					<h3>De Heks</h3>
+				</div>
+				<div class="card col-md-12 col-sm-12 col-xs-12">
+					<ul class="list-group">
+					  <li class="list-group-item">De heks heef twee toverdrankjes. Een vergif en een levenselixer</li>
+					  <li class="list-group-item">Met het vergif kan ze 's nachts een speler naar keuze elimineren.</li>
+					  <li class="list-group-item">Met het levenselixer kan ze tijdens de nacht het weerwolven slachtoffer van die nacht tot leven wekken.</li>
+					  <li class="list-group-item">Wanneer de heks in de nacht wakker wordt, wijst de spelleider aan de heks aan wie de weerwolven hebben als slachtoffer hebben gekozen.</li>
+					  <li class="list-group-item">De heks mag zelf het levenselixer innemen.</li>
+					  <li class="list-group-item">De heks mag niet beide drankjes gebruiken op dezelfde speler.</li>
+					  <li class="list-group-item">De heks mag beide drankjes in dezelfde nacht gebruiken.</li>
+					  <li class="list-group-item">Beide drankjes mogen maar één keer per spel gebruikt worden.</li>
+					  <li class="list-group-item">De heks is een burger en wint samen met de burgers wanneer alle niet-burgers zijn uitgeschakeld</li>
+					</ul>
+				</div>
+			</div>
+			<div id="jager" style="display: none;">
+				<a href="#" onclick="onBack();" ><h2>Back</h1></a>
+				<div class="card col-md-3 col-sm-6 col-xs-8">
+					<a href="#jager">
+						<img src="images/cards_jager.jpg">
+					</a>
+					<h3>De Jager</h3>
+				</div>
+				<div class="card col-md-12 col-sm-12 col-xs-12">
+					<ul class="list-group">
+					  <li class="list-group-item">Wanneer de jager sterft mag hij onmiddelijk een mede speler naar keuze elimineren</li>
+					  <li class="list-group-item">De jager is een burger en wint samen met de burgers wanneer alle niet-burgers zijn uitgeschakeld</li>
+					  <li class="list-group-item">Het is mogelijk dat er doordat de jager iemand neerschiet niemand meer over is in het spel. In dit geval heeft niemand gewonnen.</li>
+					</ul>
+				</div>
+			</div>
+			<div id="onschuldig_meisje" style="display: none;">
+				<a href="#" onclick="onBack();" ><h2>Back</h1></a>
+				<div class="card col-md-3 col-sm-6 col-xs-8">
+					<a href="#onschuldig_meisje">
+						<img src="images/cards_onschuldige meisje.jpg">
+					</a>
+					<h3>Het Onschuldige Meisje. a.k.a. de Slet</h3>
+				</div>
+				<div class="card col-md-12 col-sm-12 col-xs-12">
+					<ul class="list-group">
+					  <li class="list-group-item">De slet wijst elke nacht een speler aan om vervolgens bij deze speler te slapen.</li>
+					  <li class="list-group-item">Wanneer de slet door de weerwolven wordt aangewezen is ze niet thuis en overleefd ze de nacht.</li>
+					  <li class="list-group-item">Wanneer de speler waar de slet slaapt wordt aangewezen door de weerwolven sterven zowel de aangewezen speler als ook de slet.</li>
+					  <li class="list-group-item">De slet mag niet twee nachten achter elkaar bij de zelfde speler slapen.</li>
+					  <li class="list-group-item">De slet kan niet beschermt worden door de genezer of gered worden door de heks.</li>
+					  <li class="list-group-item">De slet kan wel door de heks worden geëlimineerd.</li>
+					  <li class="list-group-item">De slet is een burger en wint samen met de burgers wanneer alle niet-burgers zijn uitgeschakeld.</li>
+					</ul>
+				</div>
+			</div>
+			<div id="genezer" style="display: none;">
+				<a href="#" onclick="onBack();" ><h2>Back</h1></a>
+				<div class="card col-md-3 col-sm-6 col-xs-8">
+					<a href="#genezer">
+						<img src="images/cards_genezer.jpg">
+					</a>
+					<h3>De Genezer</h3>
+				</div>
+				<div class="card col-md-12 col-sm-12 col-xs-12">
+					<ul class="list-group">
+					  <li class="list-group-item">Elke nacht wordt de genezer wakker en wijst een speler aan. Deze speler is voor die nacht beschermd tegen de weerwolven</li>
+					  <li class="list-group-item">De genezer mag niet twee nachten achter elkaar de zelfde speler beschermen.</li>
+					  <li class="list-group-item">De genezer mag zichzelf beschermen.</li>
+					  <li class="list-group-item">De bescherming van de genezer beschermt niet tegen de fluitspeler of tegen de besmettelijke oerwolf</li>
+					  <li class="list-group-item">De Genezer is een burger en wint samen met de burgers wanneer alle niet-burgers zijn uitgeschakeld.</li>
+					</ul>
+				</div>
+			</div>
+			<div id="dorpsoudste" style="display: none;">
+				<a href="#" onclick="onBack();" ><h2>Back</h1></a>
+				<div class="card col-md-3 col-sm-6 col-xs-8">
+					<a href="#dorpsoudste">
+						<img src="images/cards_dorpsoudste.jpg">
+					</a>
+					<h3>De Dorpsoudste</h3>
+				</div>
+				<div class="card col-md-12 col-sm-12 col-xs-12">
+					<ul class="list-group">
+					  <li class="list-group-item">Elke nacht wordt de genezer wakker en wijst een speler aan. Deze speler is voor die nacht beschermd tegen de weerwolven</li>
+					  <li class="list-group-item">Wanneer de heks de dorpsoudste beschermd tegen de weerwolven, krijgt hij nooit meer dan één leven terug.</li>
+					  <li class="list-group-item">De Dorpsoudste is een burger en wint samen met de burgers wanneer alle niet-burgers zijn uitgeschakeld.</li>
+					</ul>
+				</div>
+			</div>
+			<div id="zondebok" style="display: none;">
+				<a href="#" onclick="onBack();" ><h2>Back</h1></a>
+				<div class="card col-md-3 col-sm-6 col-xs-8">
+					<a href="#zondebok">
+						<img src="images/cards_zondebok.jpg">
+					</a>
+					<h3>De Zondebok</h3>
+				</div>
+			</div>
+			<div id="dorpsgek" style="display: none;">
+				<a href="#" onclick="onBack();" ><h2>Back</h1></a>
+				<div class="card col-md-3 col-sm-6 col-xs-8">
+					<a href="#dorpsgek">
+						<img src="images/cards_dorpsgek.jpg">
+					</a>
+					<h3>De Dorpsgek</h3>
+				</div>
+			</div>
+			<div id="burgemeester" style="display: none;">
+				<a href="#" onclick="onBack();" ><h2>Back</h1></a>
+				<div class="card col-md-3 col-sm-6 col-xs-8">
+					<a href="#burgemeester">
+						<img src="images/cards_burgemeester.jpg">
+					</a>
+					<h3>De Burgemeester</h3>
+				</div>
+			</div>
+			<div id="twee_gezusters" style="display: none;">
+				<a href="#" onclick="onBack();" ><h2>Back</h1></a>
+				<div class="card col-md-3 col-sm-6 col-xs-8">
+					<a href="#twee_gezusters">
+						<img src="images/cards_twee gezusters.jpg">
+					</a>
+					<h3>De Twee Gezusters</h3>
+				</div>
+			</div>
+			<div id="drie_gebroeders" style="display: none;">
+				<a href="#" onclick="onBack();" ><h2>Back</h1></a>
+				<div class="card col-md-3 col-sm-6 col-xs-8">
+					<a href="#drie_gebroeders">
+						<img src="images/cards_drie gebroeders.jpg">
+					</a>
+					<h3>De Drie Gebroeders</h3>
+				</div>
+			</div>
+			<div id="vos" style="display: none;">
+				<a href="#" onclick="onBack();" ><h2>Back</h1></a>
+				<div class="card col-md-3 col-sm-6 col-xs-8">
+					<a href="#vos">
+						<img src="images/cards_vos.jpg">
+					</a>
+					<h3>De Vos</h3>
+				</div>
+			</div>
+			<div id="titus_en_de_beer" style="display: none;">
+				<a href="#" onclick="onBack();" ><h2>Back</h1></a>
+				<div class="card col-md-3 col-sm-6 col-xs-8">
+					<a href="#titus_en_de_beer">
+						<img src="images/cards_titus en zijn dansende beer.jpg">
+					</a>
+					<h3>Titus en zijn Dansende Beer</h3>
+				</div>
+			</div>
+			<div id="raadsheer" style="display: none;">
+				<a href="#" onclick="onBack();" ><h2>Back</h1></a>
+				<div class="card col-md-3 col-sm-6 col-xs-8">
+					<a href="#raadsheer">
+						<img src="images/cards_stotterende raadsheer.jpg">
+					</a>
+					<h3>De Stotterende Raadsheer</h3>
+				</div>
+			</div>
+			<div id="ridder_met_zwaard" style="display: none;">
+				<a href="#" onclick="onBack();" ><h2>Back</h1></a>
+				<div class="card col-md-3 col-sm-6 col-xs-8">
+					<a href="#ridder_met_zwaard">
+						<img src="images/cards_ridder met het roestige zwaard.jpg">
+					</a>
+					<h3>De Ridder met het Roestige Zwaard</h3>
+				</div>
+			</div>
+		</div>
+
+	</body>
+
+</html>
