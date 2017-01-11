@@ -1,10 +1,12 @@
 var hideAllCards = function() {
 	$('#allCards').hide();
 	$('#detail').show();
+	window.scrollTo(0,0); //scroll to top
 }
 
 var showAllCards = function() {
 	$('#detail').hide();
+	$("#detail").children().hide(); 
 	$('#allCards').show();
 }
 
@@ -26,14 +28,19 @@ var processHash = function(hash) {
 	}
 }
 
+var onHashChange = function() {
+	processHash(getHash());
+}
+
 var getHash = function() {
 	return window.location.hash.substr(1);
 }
 
 var onBack = function() {
-	hideCard(getHash());
+	window.history.back();
 }
 
 $(document).ready(function(){
 	processHash(getHash());
+	window.onhashchange = onHashChange;
 });
