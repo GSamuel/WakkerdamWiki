@@ -1,0 +1,15 @@
+<div id="ridder_met_zwaard">
+	<div class="card col-md-3 col-sm-6 col-xs-8">
+		<a href="#ridder_met_zwaard">
+			<img src="images/cards_{{.ImageUrl}}.jpg">
+		</a>
+		<h3>{{.Name}}</h3>
+	</div>
+	<div class="card col-md-12 col-sm-12 col-xs-12">
+		<ul class="list-group">
+		{{ range .DescriptionLines }}
+		   <li class="list-group-item">{{.}}</li>
+		{{end}}
+		</ul>
+	</div>
+</div>

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html manifest="cache/wakkerdam.appcache">
+	{{template "_head.html" .Title}}
+	<body>
+		{{template "_header.html" .Title}}
+		<div id="detail" class="container">
+			{{ range $index, $character:= .Characters }}
+			   {{template "_character.html" $character}}
+			{{ end }}
+		</div>
+
+	</body>
+
+</html>
