@@ -38,8 +38,7 @@ func (this *characterController) get(w http.ResponseWriter, req *http.Request) {
 			return
 		}
 
-		vm := viewmodels.GetDetail()
-		vm.Character = characterVM
+		vm := viewmodels.GetDetail(characterVM)
 
 		responseWriter.Header().Add("Content-Type", "text/html")
 		this.template.Execute(responseWriter, vm)
