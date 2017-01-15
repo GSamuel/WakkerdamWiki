@@ -22,27 +22,28 @@ func (this *characterController) get(w http.ResponseWriter, req *http.Request) {
 
 	vars := mux.Vars(req)
 	idRaw := vars["id"]
+
 	id, err := strconv.Atoi(idRaw)
-	if err == nil {
-		characters := models.GetCharacters()
-		var characterVM viewmodels.Character
 
-		for _, character := range characters {
-			if character.Id() == id {
-				characterVM = converters.ConvertCharacterToViewModel(character)
-			}
+	characters := models.GetCharacters()
+	var characterVM viewmodels.Character
+
+	for _, character := range characters {
+		if err == nil && character.Id() == id {
+			characterVM = converters.ConvertCharacterToViewModel(character)
+		} else if character.ImageUrl() == idRaw {
+			characterVM = converters.ConvertCharacterToViewModel(character)
 		}
-
-		if &characterVM == nil {
-			responseWriter.WriteHeader(404)
-			return
-		}
-
-		vm := viewmodels.GetDetail(characterVM)
-
-		responseWriter.Header().Add("Content-Type", "text/html")
-		this.template.Execute(responseWriter, vm)
-	} else {
-		responseWriter.WriteHeader(404)
 	}
+
+	if &characterVM == nil {
+		responseWriter.WriteHeader(404)
+		return
+	}
+
+	vm := viewmodels.GetDetail(characterVM)
+
+	responseWriter.Header().Add("Content-Type", "text/html")
+	this.template.Execute(responseWriter, vm)
+
 }
