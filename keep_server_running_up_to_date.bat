@@ -10,7 +10,7 @@ for /f %%i in ('git rev-parse @{u}') do set VAR2=%%i
 if %VAR1% NEQ %VAR2% goto Restart
 
 :End
-timeout /t 10
+timeout /t 60
 goto Start
 
 :Restart
@@ -24,7 +24,4 @@ start main\weerwolvenwiki.exe
 cd..
 goto End
 
-
-::als deze gelijk zijn dan pull en herstart wakkerdamwiki
-::git pull
 pause

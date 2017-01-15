@@ -48,6 +48,7 @@ func GetCharacters() []Character {
 			imageUrl: "weerwolf",
 			name:     "Gewone Weerwolf",
 			descriptionLines: []string{
+				"test",
 				"Elke nacht worden alle weerwolven op teken van de spelleider wakker en wijzen gezamenlijk een slachtoffer aan.",
 				"De weerwolven winnen het spel wanneer alle niet-weerwolven zijn uitgeschakeld"},
 		},
