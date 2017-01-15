@@ -1,4 +1,3 @@
-taskkill /f /im weerwolvenwiki.exe
-go build main/main.go
-rename main/main.exe weerwolvenwiki.exe
+taskkill /f /im main.exe
+go run main/main.go
 timeout /t 60
