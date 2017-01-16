@@ -40,3 +40,10 @@ h3 {
 	width: 100%;
 	border: 10px;
 }
+
+.card a:hover img {
+    border: solid 2px #CCC;
+    -moz-box-shadow: 2px 2px 5px #999;
+    -webkit-box-shadow: 2px 2px 5px #999;
+        box-shadow: 2px 2px 5px #999;
+}
