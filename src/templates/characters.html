@@ -4,6 +4,9 @@
 	<body>
 		{{template "_header.html" .Active}}
 		<div id="detail" class="container">
+			{{ range $index, $character:= .Characters }}
+			   {{template "_character.html" $character}}
+			{{ end }}
 		</div>
 
 	</body>

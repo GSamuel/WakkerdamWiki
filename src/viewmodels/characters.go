@@ -2,8 +2,9 @@ package viewmodels
 
 import ()
 
-type Home struct {
+type Characters struct {
 	Head       Head
+	Active     string
 	Characters []Character
 }
 
@@ -20,13 +21,14 @@ type Head struct {
 	Keywords    string
 }
 
-func GetHome() Home {
-	result := Home{
+func GetCharacters() Characters {
+	result := Characters{
 		Head: Head{
-			Title:       "Weerwolven van Wakkerdam",
+			Title:       "Rollen - WitteWeerwolf.nl",
 			Description: "Speluitleg van Weerwolven van Wakkerdam",
 			Keywords:    "weerwolven, weerwolven van wakkerdam, witte weerwolf, weerwolf, het dorp, volle maan, het pact, speluitleg, rollenspel, uitbereiding",
 		},
+		Active: "rollen",
 	}
 	return result
 }

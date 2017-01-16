@@ -5,6 +5,7 @@ import (
 	"../converters"
 	"../models"
 	"../viewmodels"
+	"fmt"
 	"github.com/gorilla/mux"
 	"net/http"
 	"strconv"
@@ -46,4 +47,11 @@ func (this *characterController) get(w http.ResponseWriter, req *http.Request) {
 	responseWriter.Header().Add("Content-Type", "text/html")
 	this.template.Execute(responseWriter, vm)
 
+}
+
+func (this *characterController) redirect(w http.ResponseWriter, req *http.Request) {
+	vars := mux.Vars(req)
+	idRaw := vars["id"]
+
+	http.Redirect(w, req, fmt.Sprintf("/rollen/%s", idRaw), 301)
 }

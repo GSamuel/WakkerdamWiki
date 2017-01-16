@@ -7,6 +7,7 @@ import (
 type Detail struct {
 	Head      Head
 	Character Character
+	Active    string
 }
 
 func GetDetail(character Character) Detail {
@@ -18,14 +19,16 @@ func GetDetail(character Character) Detail {
 	}
 
 	keywords := fmt.Sprintf("%s, weerwolven, weerwolven van wakkerdam, weerwolf, het dorp, volle maan, het pact, speluitleg, rollenspel, uitbereiding", character.Name)
+	title := fmt.Sprintf("%s - WitteWeerwolf.nl", character.Name)
 
 	result := Detail{
 		Head: Head{
-			Title:       character.Name,
+			Title:       title,
 			Description: description,
 			Keywords:    keywords,
 		},
 		Character: character,
+		Active:    "rollen",
 	}
 	return result
 }

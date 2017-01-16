@@ -13,13 +13,20 @@ func Register(templates *template.Template) {
 
 	router := mux.NewRouter()
 
-	hc := new(homeController)
-	hc.template = templates.Lookup("index.html")
-	router.HandleFunc("/", hc.get)
+	indexController := new(indexController)
+	indexController.template = templates.Lookup("index.html")
+	router.HandleFunc("/", indexController.get)
+
+	charactersController := new(charactersController)
+	charactersController.template = templates.Lookup("characters.html")
+	router.HandleFunc("/rollen", charactersController.get)
 
 	characterController := new(characterController)
 	characterController.template = templates.Lookup("detail.html")
-	router.HandleFunc("/{id}", characterController.get)
+	router.HandleFunc("/rollen/{id}", characterController.get)
+
+	//old
+	router.HandleFunc("/{id}", characterController.redirect)
 
 	http.Handle("/", router)
 

@@ -9,11 +9,11 @@ import (
 	"text/template"
 )
 
-type homeController struct {
+type charactersController struct {
 	template *template.Template
 }
 
-func (this *homeController) get(w http.ResponseWriter, req *http.Request) {
+func (this *charactersController) get(w http.ResponseWriter, req *http.Request) {
 
 	characters := models.GetCharacters()
 	charactersVM := []viewmodels.Character{}
@@ -22,7 +22,7 @@ func (this *homeController) get(w http.ResponseWriter, req *http.Request) {
 		charactersVM = append(charactersVM, converters.ConvertCharacterToViewModel(character))
 	}
 
-	vm := viewmodels.GetHome()
+	vm := viewmodels.GetCharacters()
 	vm.Characters = charactersVM
 
 	w.Header().Add("Content-Type", "text/html")

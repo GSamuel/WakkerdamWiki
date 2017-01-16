@@ -14,24 +14,6 @@ h3 {
 	padding-top: 15px;
 }
 
-.header {
-	background-color: #34495e;
-	color: #f1f1f1;
-	padding: 15px;
-	padding-left: 30px;
-}
-
-.header a {
-	color: #f1f1f1;
-}
-
-.header i {
-	font-size: 36px;
-	float: left;
-	line-height: 1.1;
-	padding-right: 15px; 
-}
-
 .card {
 	padding: 15px;
 }
@@ -46,4 +28,20 @@ h3 {
     -moz-box-shadow: 2px 2px 5px #999;
     -webkit-box-shadow: 2px 2px 5px #999;
         box-shadow: 2px 2px 5px #999;
+}
+
+.navbar-default {
+	background-color: #34495e;
+	background-image: none;
+}
+
+.navbar-default .navbar-nav > li > a, .navbar-default .navbar-brand, .navbar-default .navbar-brand:hover {
+	color: #f1f1f1;
+}
+
+
+
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+	color: #000000;
+	background-color: #bdc3c7;
 }
