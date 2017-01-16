@@ -18,6 +18,18 @@ h3 {
 	background-color: #34495e;
 	color: #f1f1f1;
 	padding: 15px;
+	padding-left: 30px;
+}
+
+.header a {
+	color: #f1f1f1;
+}
+
+.header i {
+	font-size: 36px;
+	float: left;
+	line-height: 1.1;
+	padding-right: 15px; 
 }
 
 .card {
