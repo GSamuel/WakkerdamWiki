@@ -14,6 +14,10 @@ h3 {
 	padding-top: 15px;
 }
 
+a:-webkit-any-link {
+    text-decoration: none;
+}
+
 .card {
 	padding: 15px;
 }
@@ -30,6 +34,10 @@ h3 {
         box-shadow: 2px 2px 5px #999;
 }
 
+.navbar {
+	margin-bottom: 0px;
+}
+
 .navbar-default {
 	background-color: #34495e;
 	background-image: none;
@@ -39,9 +47,11 @@ h3 {
 	color: #f1f1f1;
 }
 
-
-
 .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
 	color: #000000;
 	background-color: #bdc3c7;
+}
+
+.well {
+	background-image: none;
 }

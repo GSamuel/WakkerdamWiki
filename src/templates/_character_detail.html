@@ -6,10 +6,8 @@
 		<h3>{{.Name}}</h3>
 	</div>
 	<div class="card col-md-12 col-sm-12 col-xs-12">
-		<ul class="list-group">
 		{{ range .DescriptionLines }}
-		   <li class="list-group-item">{{.}}</li>
+		   <p>{{.}}</p>
 		{{end}}
-		</ul>
 	</div>
 </div>
