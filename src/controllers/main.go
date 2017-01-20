@@ -25,6 +25,10 @@ func Register(templates *template.Template) {
 	characterController.template = templates.Lookup("detail.html")
 	router.HandleFunc("/rollen/{id}", characterController.get)
 
+	simulatorController := new(simulatorController)
+	simulatorController.template = templates.Lookup("simulator.html")
+	router.HandleFunc("/simulator", simulatorController.get)
+
 	//old
 	router.HandleFunc("/{id}", characterController.redirect)
 

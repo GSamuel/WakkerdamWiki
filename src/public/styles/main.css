@@ -55,3 +55,7 @@ a:-webkit-any-link {
 .well {
 	background-image: none;
 }
+
+.prototype {
+	display: none;
+}
