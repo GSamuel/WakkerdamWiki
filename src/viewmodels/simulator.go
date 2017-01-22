@@ -17,7 +17,7 @@ func GetSimulator() Index {
 			Description: "Website beschrijving",
 			Keywords:    keywords,
 		},
-		Active: "index",
+		Active: "simulator",
 	}
 	return result
 }
