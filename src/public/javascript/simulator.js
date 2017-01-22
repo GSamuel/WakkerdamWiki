@@ -1,3 +1,11 @@
+var newDefArray = function(n, value) {
+	var array = new Array(n);
+	for (var i = 0; i < array.length; i++) {
+		array[i] = value;
+	}
+	return array;
+} 
+
 var gameSettings = {
 	updateTotal : function(settings) {
 		var total = 0;
@@ -45,7 +53,7 @@ var gameSettings = {
 		settings.cards = cards;
 
 		gameSettings.saveSettings(settings);
-	},
+	}
 }
 
 var gameState = {
@@ -155,7 +163,10 @@ var view = {
 		var game = $("#game");
 		removeChildren(game);
 
-		$(game).append("<p>Nacht: "+ state.night +"</p>").append("<p>Ronde: "+ state.round+"</p>");
+		$(game).append("<p>"+ (state.night ? "Nacht" : "Dag") + " " + state.round + "</p>");
+		if(state.over) {
+			$(game).append("<p> De " +state.winner+ " hebben gewonnen!</p>");
+		}
 
 		$(game).children().each (function(index, el) {
 			$(el).toggleClass("col-xs-6 col-sm-3");
@@ -174,6 +185,11 @@ var view = {
 
 			var cardSelect = $(clone).find(".card-select");
 			var cardName = $(clone).find(".card-name");
+			if(!player.alive) {
+				$(clone).toggleClass("alert-danger");
+			} else {
+				$(clone).toggleClass("alert-success");
+			}
 			if(player.card.name == "unknown") {
 				$(cardSelect).find("label").prop("for", "rol-"+player.id);
 				var select = $(cardSelect).find("select").prop("id", "rol-"+player.id);
@@ -182,7 +198,7 @@ var view = {
 
 				for (var j = 0; j < state.unassigned.length; j++) {
 					if (cardsAlreadyInList.indexOf(state.unassigned[j].name) == -1) {
-						$(select).append("<option>" + state.unassigned[j].name + "</option").prop("playerId", player.id);
+						$(select).append("<option>" + state.unassigned[j].name + "</option>").prop("playerId", player.id);
 						cardsAlreadyInList.push(state.unassigned[j].name);
 					}
 				}
@@ -193,6 +209,37 @@ var view = {
 				$(cardName).remove();
 			} else {
 				$(cardName).html(player.card.name);
+				for (var k = 0; k < player.card.targets; k++) {
+					var stuff = $('<select class="form-control" ><option>-1</option></select>');
+					$(stuff).prop("target", k).prop("playerId", player.id);
+					for (var j = 0; j < state.players.length; j++) {
+						var p = state.players[j];
+						$(stuff).append("<option>" + p.id + "</option>");
+					}
+					if(player.actions.length > 0) {
+						$(stuff).val(player.actions[0].data[k]);
+					}
+					$(clone).append(stuff);
+				}
+				var select = $(clone).find("select");
+				
+				$(select).change(function(){
+					var value = $(this).val();
+					var playerId = parseInt($(this).prop("playerId"));
+					var target = parseInt($(this).prop("target"));
+
+
+					var localState = gameState.retreiveState();
+					var index = playerId -1;
+					if(localState.players[index].actions.length == 0) {
+						localState.players[index].actions = [{type:localState.players[index].card.name, data:newDefArray(localState.players[index].card.targets, "-1")}];
+					}
+					localState.players[index].actions[0].data[target] = value;
+
+					gameState.saveState(localState);
+					repo.validateGameState(gameState.retreiveState(), gameState.saveState);
+				});
+
 				$(cardSelect).remove();
 			}
 		}
@@ -206,6 +253,28 @@ var view = {
 			$(clone).html(error.description);
 		}
 
+		//actions
+
+		var actions = $("#actions");
+		removeChildren(actions);
+		var prototype = $(actions).find(".prototype");
+		var clone = $(prototype).clone().insertBefore(prototype).toggleClass("prototype");
+		var select = $(clone).find("select");
+		for (var i = 0; i < state.players.length; i++) {
+			var player = state.players[i];
+			$(select).append("<option>" + player.id + "</option>");
+		}
+		if(state.actions.length > 0) {
+			$(select).val(state.actions[0].data[0]);
+		}
+
+		$(select).change (function(){
+			var state = gameState.retreiveState();
+			var action = {type:"kill", data: [$(this).val()]}
+			state.actions = [action];
+			gameState.saveState(state);
+			repo.validateGameState(gameState.retreiveState(), gameState.saveState);
+		});
 	}
 }
 
@@ -229,26 +298,31 @@ var addFormListeners = function() {
 		settings.player_names = settings.player_names.slice(0, settings.total);
 		ajax.post("new", settings, gameState.saveState);
 	});
-	$( "#players" ).submit(function( event ) {
+	$( "#actions" ).submit(function( event ) {
 		event.preventDefault();
-		repo.validateGameState(gameState.retreiveState(), gameState.saveState);
+		var state = gameState.retreiveState();
+		repo.updateGameState(state, gameState.saveState);
 	});
 }
 
 var repo = {
-	getAvailableCards : function(succes) {
-		ajax.get("available_cards", succes);
+	getAvailableCards : function(success) {
+		ajax.get("available_cards", success);
 	},
-	validateGameState : function(state, succes) {
-		ajax.post("validate", state, succes);
+	validateGameState : function(state, success) {
+		ajax.post("validate", state, success);
+	},
+	updateGameState : function(state, success) {
+		ajax.post("update", state, success);
 	},
 }
 
 var ajax = {
+	url: "http://192.168.0.104:1237/",
 	post : function(endpoint, data = {}, success) {
 		$.ajax({
 			type: "POST",
-			url: "http://192.168.0.102:1237/" + endpoint,
+			url: ajax.url + endpoint,
 			data : JSON.stringify(data),
 			dataType: "json",
 			contentType: "application/json; charset=utf-8",
@@ -258,7 +332,7 @@ var ajax = {
 	get : function(endpoint, success) {
 		$.ajax({
 			type: "GET",
-			url: "http://192.168.0.102:1237/" + endpoint,
+			url: ajax.url + endpoint,
 			dataType: "json",
 			contentType: "application/json; charset=utf-8",
 			success: success,

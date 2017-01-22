@@ -43,7 +43,7 @@
 
 	<div class="container well">
 		<form id="players" class="row">
-			<div class="col-xs-6 col-sm-3 prototype" style="height:150px;">
+			<div class="col-xs-6 col-sm-3 prototype alert" style="height:150px;">
 				<p class="player-name">-1: Unknown</p>
 				<div class="form-group card-select">
 					<label for="xxx">Rol</label>
@@ -53,8 +53,18 @@
 				</div>
 				<p class="card-name">undefined</p>
 			</div>
+		</form>
+	</div>
+
+	<div class="container well">
+		<form id="actions" class="row">
+			<div class="form-group col-xs-6 col-sm-3 prototype">
+				<label for="target">Selecteer een speler</label>
+				<select class="form-control" id="target">
+				</select>
+			</div>
 			<div class="form-group col-xs-6 col-sm-3 pinned">
-				<button type="submit" class="btn btn-primary" style="margin-top: 25px;">Validate</button>
+				<button type="submit" class="btn btn-primary" style="margin-top: 25px;">Simuleer</button>
 			</div>
 		</form>
 	</div>
