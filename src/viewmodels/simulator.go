@@ -16,6 +16,7 @@ func GetSimulator() Index {
 			Title:       "Simulator - WitteWeerwolf.nl",
 			Description: "Website beschrijving",
 			Keywords:    keywords,
+			Canonical:   "http://www.witteweerwolf.nl/simulator",
 		},
 		Active: "simulator",
 	}

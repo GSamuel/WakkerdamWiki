@@ -19,6 +19,7 @@ type Head struct {
 	Title       string
 	Description string
 	Keywords    string
+	Canonical   string
 }
 
 func GetCharacters() Characters {
@@ -27,6 +28,7 @@ func GetCharacters() Characters {
 			Title:       "Rollen - WitteWeerwolf.nl",
 			Description: "Speluitleg van Weerwolven van Wakkerdam",
 			Keywords:    "weerwolven, weerwolven van wakkerdam, witte weerwolf, weerwolf, het dorp, volle maan, het pact, speluitleg, rollenspel, uitbereiding",
+			Canonical:   "http://www.witteweerwolf.nl/rollen",
 		},
 		Active: "rollen",
 	}
