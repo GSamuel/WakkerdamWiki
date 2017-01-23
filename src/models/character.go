@@ -53,7 +53,7 @@ func GetCharacters() []Character {
 		},
 		Character{
 			id:       2,
-			imageUrl: "grote_boze_wolf",
+			imageUrl: "grote-boze-wolf",
 			name:     "De Grote Boze Wolf",
 			descriptionLines: []string{
 				"De Grote Boze Wolf wordt elke nacht samen met de andere weerwolven wakker en kiest met de rest van de weerwolven een slachtoffer.",
@@ -63,7 +63,7 @@ func GetCharacters() []Character {
 		},
 		Character{
 			id:       3,
-			imageUrl: "besmettelijke_oerwolf",
+			imageUrl: "besmettelijke-oerwolf",
 			name:     "De Besmettelijke Oerwolf",
 			descriptionLines: []string{
 				"De Besmettelijke Oerwolf wordt elke nacht samen met de andere weerwolven wakker en kiest met de rest van de weerwolven een slachtoffer.",
@@ -85,7 +85,7 @@ func GetCharacters() []Character {
 		},
 		Character{
 			id:       5,
-			imageUrl: "toegewijde_dienstmeisje",
+			imageUrl: "toegewijde-dienstmeisje",
 			name:     "Het Toegewijde Dienstmeisje",
 			descriptionLines: []string{
 				"Vlak voordat de kaart van het dagelijkse slachtoffer bekend wordt gemaakt mag het Toegewijde Dienstmeisje zeggen dat ze het dienstmeisje is. Zij krijgt nu de identiteit van de net gestorven speler en speelt met deze identiteit verder. Haar nieuwe identiteit wordt aan niemand bekend gemaakt.",
@@ -106,7 +106,7 @@ func GetCharacters() []Character {
 		},
 		Character{
 			id:       7,
-			imageUrl: "kleine_wilde",
+			imageUrl: "kleine-wilde",
 			name:     "De Kleine Wilde",
 			descriptionLines: []string{
 				"In de eerste nacht wordt de Kleine Wilde opgeroepen en kiest hij een speler. Deze speler is vanaf nu zijn grote voorbeeld.",
@@ -131,7 +131,7 @@ func GetCharacters() []Character {
 		},
 		Character{
 			id:       9,
-			imageUrl: "witte_weerwolf",
+			imageUrl: "witte-weerwolf",
 			name:     "De Witte Weerwolf",
 			descriptionLines: []string{
 				"De Witte Weerwolf wordt elke nacht samen met de andere weerwolven wakker en maakt met de rest van de weerwolven een slachtoffer.",
@@ -163,7 +163,7 @@ func GetCharacters() []Character {
 		},
 		Character{
 			id:       12,
-			imageUrl: "verschrikkelijke_sektarier",
+			imageUrl: "verschrikkelijke-sektarier",
 			name:     "De Verschrikkelijke Sektariër",
 			descriptionLines: []string{
 				"Wanneer de Verschrikkelijke Sektariër in het spel zit worden de spelers van te voren verdeeld in twee groepen.",
@@ -174,7 +174,7 @@ func GetCharacters() []Character {
 		},
 		Character{
 			id:       13,
-			imageUrl: "gewone_burger",
+			imageUrl: "gewone-burger",
 			name:     "Gewone Burger",
 			descriptionLines: []string{
 				"De Gewone Burger heeft geen bijzondere gave.",
@@ -233,7 +233,7 @@ func GetCharacters() []Character {
 		},
 		Character{
 			id:       18,
-			imageUrl: "onschuldige_meisje",
+			imageUrl: "onschuldige-meisje",
 			name:     "De Slet",
 			descriptionLines: []string{
 				"De slet wijst elke nacht een speler aan om vervolgens bij deze speler te slapen.",
@@ -303,7 +303,7 @@ func GetCharacters() []Character {
 		},
 		Character{
 			id:       24,
-			imageUrl: "twee_gezusters",
+			imageUrl: "twee-gezusters",
 			name:     "De Twee Gezusters",
 			descriptionLines: []string{
 				"Beide Gezusters worden de eerste nacht opgeroepen, zodat ze van elkaar weten dat ze de Twee Gezusters zijn.",
@@ -312,7 +312,7 @@ func GetCharacters() []Character {
 		},
 		Character{
 			id:       25,
-			imageUrl: "drie_gebroeders",
+			imageUrl: "drie-gebroeders",
 			name:     "De Drie Gebroeders",
 			descriptionLines: []string{
 				"Alle drie de Gebroeders worden de eerste nacht opgeroepen, zodat ze van elkaar weten dat ze de Drie Gebroeders zijn.",
@@ -333,7 +333,7 @@ func GetCharacters() []Character {
 		},
 		Character{
 			id:       27,
-			imageUrl: "titus_en_zijn_dansende_beer",
+			imageUrl: "titus-en-zijn-dansende-beer",
 			name:     "Titus en zijn Dansende Beer",
 			descriptionLines: []string{
 				"Elke ochtend gromt de beer van Titus wanneer Titus de buurman is van minstens één weerwolf. De spelleider speelt hierbij.",
@@ -344,7 +344,7 @@ func GetCharacters() []Character {
 		},
 		Character{
 			id:       28,
-			imageUrl: "stotterende_raadsheer",
+			imageUrl: "stotterende-raadsheer",
 			name:     "De Stotterende Raadsheer",
 			descriptionLines: []string{
 				"De Stotterende Raadsheer wordt in de eerste nacht wakker om aan de spelleider een zelf bedacht teken te laten zien.",
@@ -354,7 +354,7 @@ func GetCharacters() []Character {
 		},
 		Character{
 			id:       29,
-			imageUrl: "ridder_met_het_roestige_zwaard",
+			imageUrl: "ridder-met-het-roestige-zwaard",
 			name:     "De Ridder met het Roestige Zwaard",
 			descriptionLines: []string{
 				"Wanneer de Ridder met het Roestige Zwaard wordt aangevallen door de weerwolven steekt hij één weerwolf met zijn zwaard. De gewonde weerwolf gaat niet direct dood, maar loopt wel een infectie op.",
