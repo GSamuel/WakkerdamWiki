@@ -14,7 +14,7 @@ func GetIndex() Index {
 	result := Index{
 		Head: Head{
 			Title:       "Home - WitteWeerwolf.nl",
-			Description: "Website beschrijving",
+			Description: "De website over Weerwolven van Wakkerdam. Hier vind je een uitgebreide Speluitleg, bescrhijving van karakters en rollen en hulpmiddelen voor spelleiders.",
 			Keywords:    keywords,
 		},
 		Active: "index",
