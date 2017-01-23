@@ -9,11 +9,11 @@ type Simulator struct {
 
 func GetSimulator() Index {
 
-	keywords := ""
+	keywords := "witte weerwolf, weerwolven, weerwolven van wakkerdam, simulator, spelleider, hulpmiddel, simulatie, tool"
 
 	result := Index{
 		Head: Head{
-			Title:       "WitteWeerwolf.nl",
+			Title:       "Simulator - WitteWeerwolf.nl",
 			Description: "Website beschrijving",
 			Keywords:    keywords,
 		},

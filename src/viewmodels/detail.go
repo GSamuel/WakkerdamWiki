@@ -18,7 +18,7 @@ func GetDetail(character Character) Detail {
 		description = character.DescriptionLines[0]
 	}
 
-	keywords := fmt.Sprintf("%s, weerwolven, weerwolven van wakkerdam, weerwolf, het dorp, volle maan, het pact, speluitleg, rollenspel, uitbereiding", character.Name)
+	keywords := fmt.Sprintf("%s, weerwolven, weerwolven van wakkerdam, witte weerwolf", character.Name)
 	title := fmt.Sprintf("%s - WitteWeerwolf.nl", character.Name)
 
 	result := Detail{
