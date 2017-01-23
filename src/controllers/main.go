@@ -38,6 +38,7 @@ func Register(templates *template.Template) {
 	http.HandleFunc("/styles/", serverResource)
 	http.HandleFunc("/javascript/", serverResource)
 	http.HandleFunc("/cache/", serverResource)
+	http.HandleFunc("/xml/", serverResource)
 }
 
 func serverResource(w http.ResponseWriter, req *http.Request) {
@@ -55,6 +56,8 @@ func serverResource(w http.ResponseWriter, req *http.Request) {
 		contentType = "application/javascript"
 	} else if strings.HasSuffix(path, ".appcache") {
 		contentType = "text/cache-manifest"
+	} else if strings.HasSuffix(path, ".xml") {
+		contentType = "application/xml"
 	} else {
 		contentType = "text/plain"
 	}
