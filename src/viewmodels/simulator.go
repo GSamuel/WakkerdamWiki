@@ -14,7 +14,7 @@ func GetSimulator() Index {
 	result := Index{
 		Head: Head{
 			Title:       "Simulator - WitteWeerwolf.nl",
-			Description: "Website beschrijving",
+			Description: "Deze Simulator is een tool en hulpmiddel voor de spelleider om beter het spel te kunnen leiden. Bereken automatisch wie er in een nacht of dag sterft en zie de volledige geschiedenis van een potje in.",
 			Keywords:    keywords,
 			Canonical:   "http://www.witteweerwolf.nl/simulator",
 		},
