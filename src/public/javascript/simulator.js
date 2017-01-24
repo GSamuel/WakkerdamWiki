@@ -253,6 +253,17 @@ var view = {
 			$(clone).html(error.description);
 		}
 
+
+
+		var events = $("#events");
+		removeChildren(events);
+		for (var i = 0; i < state.events.length; i++) {
+			var event = state.events[i];
+			var prototype = $(events).find(".prototype");
+			var clone = $(prototype).clone().insertBefore( prototype ).toggleClass("prototype");
+			$(clone).html(event.description + " - source: " + event.source);
+		}
+
 		//actions
 
 		var actions = $("#actions");
@@ -318,7 +329,7 @@ var repo = {
 }
 
 var ajax = {
-	url: "http://192.168.0.104:1237/",
+	url: "http://api.witteweerwolf.nl/",
 	post : function(endpoint, data = {}, success) {
 		$.ajax({
 			type: "POST",
